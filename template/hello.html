@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load mytags_now %}
+
+{% block title %}
+<title>This is the title</title>
+{% endblock %}
+
+
+{% block content %}
+  <h2>Hello {{ user }}.</h2><br/>
+  <h4>{% mytags_now "%Y-%m-%d %I:%M %p" %}<h4><br/>
+  <div>
+  <p/>
+  This is the Hello content.</br>
+  Hello everyone.
+  </div>
+{% endblock %}
