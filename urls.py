@@ -6,7 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     (r'^ttapp/$', 'djproj.ttapp.views.index'),
-    (r'', include('djproj.ttapp.urls')),
+    (r'', include('djproj.home.urls')),
     # Example:
     # (r'^djproj/', include('djproj.foo.urls')),
 

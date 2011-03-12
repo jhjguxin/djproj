@@ -11,6 +11,11 @@ class LatestEntries(Feed):
     def items(self):
         return Entry.objects.order_by('-pub_date')[:5]
 
+feeds = {
+    'latest': LatestEntries,
+    # 'categories': LatestEntriesByCategory,
+}
+
 info_dict = {
     'queryset': Entry.objects.all(),
     'date_field': 'pub_date',
@@ -19,11 +24,6 @@ info_dict = {
 sitemaps = {
     'flatpages': FlatPageSitemap,
     'blog': GenericSitemap(info_dict, priority=0.6),
-}
-
-feeds = {
-    'latest': LatestEntries,
-    # 'categories': LatestEntriesByCategory,
 }
 
 urlpatterns = patterns('',
